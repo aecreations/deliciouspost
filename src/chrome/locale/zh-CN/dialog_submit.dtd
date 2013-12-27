@@ -1,0 +1,12 @@
+<!ENTITY title "发布到Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "页面信息">
+<!ENTITY url.label "URL">
+<!ENTITY description.label "描述">
+<!ENTITY extended.label "附注（选填）">
+<!ENTITY tags.label "标签（以逗号分隔）">
+<!ENTITY tabbox.login.tab.label "登陆">
+<!ENTITY username.label "用户名">
+<!ENTITY password.label "密码">
+<!ENTITY use_password_manager.label "使用密码管理器记录登陆信息">
+<!ENTITY privateBkmk.label "不共享">
+<!ENTITY button.accept.label "发布">

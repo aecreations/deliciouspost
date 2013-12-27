@@ -1,0 +1,14 @@
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!ENTITY prefDlg.title "Opciones">
+<!ENTITY backgrdSave.label "Enviar URLs en segundo plano">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Rellenar las notas del marcador con el texto seleccionado">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Permitir marcadores privados">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Mantener el marcador existente si la URL ya fue enviada.">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "Usar Alt+Shift+D para mostrar el cuadro de diálogo">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Seleccionar siempre la opción No Compartir">
+<!ENTITY alwaysPrivate.accesskey "D">

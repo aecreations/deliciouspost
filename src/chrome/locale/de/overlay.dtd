@@ -1,0 +1,6 @@
+<!-- context menu overlay -->
+<!ENTITY menuitem.label "Seite bei del.icio.us speichern...">
+<!ENTITY menuitem.link.label "Link bei del.icio.us speichern...">
+<!-- toolbar button overlay -->
+<!ENTITY toolbarbutton.tooltiptext "Seite bei del.icio.us speichern...">
+<!ENTITY toolbarbutton.label "Delicious Post">

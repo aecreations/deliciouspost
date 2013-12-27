@@ -1,0 +1,13 @@
+<!-- Dialog -->
+<!ENTITY title "Bei del.icio.us speichern">
+<!ENTITY tabbox.pageinfo.tab.label "Seiteninformationen">
+<!ENTITY url.label "URL">
+<!ENTITY description.label "Beschreibung">
+<!ENTITY extended.label "Notizen/Notes (optional)">
+<!ENTITY tags.label "Schlagwörter/Tags (durch Kommata getrennt)">
+<!ENTITY tabbox.login.tab.label "Anmeldung">
+<!ENTITY username.label "Benutzername">
+<!ENTITY password.label "Passwort">
+<!ENTITY use_password_manager.label "Passwortmanager benutzen um Anmeldedaten zu speichern">
+<!ENTITY privateBkmk.label "Nicht mit anderen teilen">
+<!ENTITY button.accept.label "Lesezeichen speichern">

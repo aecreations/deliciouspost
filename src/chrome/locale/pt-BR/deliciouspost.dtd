@@ -1,0 +1,16 @@
+<!--  -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!--  -->
+<!ENTITY prefDlg.title "Opções do Delicious Post">
+<!ENTITY backgrdSave.label "Enviar URLs em segundo plano">
+<!ENTITY backgrdSave.accesskey "E">
+<!ENTITY notesFromSel.label "Preencher automaticamente as notas do favorito com o texto selecionado">
+<!ENTITY notesFromSel.accesskey "a">
+<!ENTITY privateBkmks.label "Permitir favoritos privados">
+<!ENTITY privateBkmks.accesskey "p">
+<!ENTITY replaceBkmk.label "Manter favorito existente se a URL já tiver sido enviada">
+<!ENTITY replaceBkmk.accesskey "M">
+<!ENTITY enableShortcutKey.label "Usar Alt+Shift+D para abrir o diálogo">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Sempre ativar opção Não compartilhar">
+<!ENTITY alwaysPrivate.accesskey "N">

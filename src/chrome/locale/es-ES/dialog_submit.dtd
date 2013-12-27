@@ -1,0 +1,12 @@
+<!ENTITY title "Enviar a Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Info.">
+<!ENTITY url.label "URL">
+<!ENTITY description.label "Descripción">
+<!ENTITY extended.label "Notas(opcional)">
+<!ENTITY tags.label "Etiquetas(separadas por comas)">
+<!ENTITY tabbox.login.tab.label "Login">
+<!ENTITY username.label "Nombre de Usuario">
+<!ENTITY password.label "Contraseña">
+<!ENTITY use_password_manager.label "Usar el administrador de contraseñas para recordar los detalles del login">
+<!ENTITY privateBkmk.label "No compartir">
+<!ENTITY button.accept.label "Enviar">

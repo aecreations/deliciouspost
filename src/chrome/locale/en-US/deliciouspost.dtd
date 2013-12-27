@@ -1,0 +1,17 @@
+<!-- General -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+
+<!-- Preferences dialog -->
+<!ENTITY prefDlg.title "Delicious Post Options">
+<!ENTITY backgrdSave.label "Post URLs in the background">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Auto-fill bookmark notes from selected text">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Allow private bookmarks">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Keep existing bookmark if the URL is already posted">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "Use Alt+Shift+D to display dialog">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Always select Do Not Share option">
+<!ENTITY alwaysPrivate.accesskey "D">

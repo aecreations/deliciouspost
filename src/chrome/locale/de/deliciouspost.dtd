@@ -1,0 +1,16 @@
+<!-- General -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!-- Preferences dialog -->
+<!ENTITY prefDlg.title "Delicious Post Optionen">
+<!ENTITY backgrdSave.label "Lesezeichen im Hintergrund erstellen">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Automatisch &quot;Notes&quot; des Lesezeichens mit markiertem Text füllen">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Private Lesezeichen erlauben">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Bestehendes Lesezeichen beibehalten, wenn die URL schon verwendet wurde">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "Alt+Umschalt+D um Dialog anzuzeigen">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Immer &quot;Nicht teilen&quot;-Option auswählen">
+<!ENTITY alwaysPrivate.accesskey "D">

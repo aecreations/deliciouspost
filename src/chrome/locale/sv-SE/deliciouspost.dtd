@@ -1,0 +1,16 @@
+<!-- General -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!-- Preferences dialog -->
+<!ENTITY prefDlg.title "Delicious Post alternativ">
+<!ENTITY backgrdSave.label "Lägg in url i bakgrunden">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Fyll i bokmärkesanteckningar från vald text">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Tillåt privata bokmärken">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Behåll existerande bokmärken om url redan är inlagd">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "Använd Alt+Shift+D för att visa dialog">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Aktivera alltid alternativet Dela inte">
+<!ENTITY alwaysPrivate.accesskey "D">

@@ -1,0 +1,12 @@
+<!ENTITY title "Отправить на Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Информация о странице">
+<!ENTITY url.label "Адрес">
+<!ENTITY description.label "Описание">
+<!ENTITY extended.label "Примечание (опционально)">
+<!ENTITY tags.label "Тэги (разделяйте пробелами)">
+<!ENTITY tabbox.login.tab.label "Логин">
+<!ENTITY username.label "Имя пользователя">
+<!ENTITY password.label "Пароль">
+<!ENTITY use_password_manager.label "Использовать Менеджер Паролей для хранения информации об аккаунте">
+<!ENTITY privateBkmk.label "Не открывать в общий доступ">
+<!ENTITY button.accept.label "Отправить">

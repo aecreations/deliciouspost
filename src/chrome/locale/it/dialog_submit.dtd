@@ -1,0 +1,13 @@
+<!-- Dialog -->
+<!ENTITY title "Invio del link a Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Informazioni sul segnalibro">
+<!ENTITY url.label "URL:">
+<!ENTITY description.label "Titolo:">
+<!ENTITY extended.label "Note (opzionali):">
+<!ENTITY tags.label "Tag (separati da virgola):">
+<!ENTITY tabbox.login.tab.label "Dati di accesso">
+<!ENTITY username.label "Nome utente:">
+<!ENTITY password.label "Password:">
+<!ENTITY use_password_manager.label "Memorizza i dati di accesso nella gestione delle password del browser">
+<!ENTITY privateBkmk.label "Non condividere questo segnalibro">
+<!ENTITY button.accept.label "Invia">

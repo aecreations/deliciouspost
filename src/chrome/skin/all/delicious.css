@@ -1,0 +1,35 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#ae-deliciouspost-toolbarbutton {
+	list-style-image: url(chrome://aedeliciouspost/skin/all/buttons.png);
+	-moz-image-region: rect(0 33px 24px 0);
+}
+
+#ae-deliciouspost-toolbarbutton:hover {
+	-moz-image-region: rect(0 66px 24px 33px);
+}
+
+toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton {
+	-moz-image-region: rect(0 88px 16px 66px);
+}
+
+toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton:hover {
+	-moz-image-region: rect(0 110px 16px 88px);
+}
+
+/* Status bar icon to indicate background save progress */
+#ae-deliciouspost-save-progress {
+  list-style-image: none;
+}
+
+#ae-deliciouspost-save-progress[status="saving"] {
+  list-style-image: url("chrome://aedeliciouspost/skin/all/save.png");
+}
+
+#ae-deliciouspost-save-progress[status="success"] {
+  list-style-image: url("chrome://aedeliciouspost/skin/all/save_success.png");
+}
+
+#ae-deliciouspost-save-progress[status="failure"] {
+  list-style-image: url("chrome://aedeliciouspost/skin/all/save_failure.png");
+}

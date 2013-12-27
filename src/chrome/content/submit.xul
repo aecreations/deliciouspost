@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog SYSTEM "chrome://aedeliciouspost/locale/dialog_submit.dtd">
+<dialog id="delicious-post-dialog" windowtype="aedeliciouspost:submit"
+        screenX="260" screenY="220" persist="screenX screenY"
+        onload="delicious_post_dialog_init();"
+	ondialogaccept="return delicious_post_dialog_accept();"
+	ondialogcancel="return delicious_post_dialog_cancel();"
+        title="&title;"
+        buttons="accept,cancel" buttonlabelaccept="&button.accept.label;"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+	<stringbundle id="delicious-post-stringbundle" src="chrome://aedeliciouspost/locale/deliciouspost.properties"/>
+
+	<script type="application/javascript" src="chrome://aedeliciouspost/content/submit.js"/>
+	<script type="application/javascript" src="chrome://global/content/XPCNativeWrapper.js"/>
+
+	<tabbox id="delicious-post-dialog-tabbox">
+		<tabs >
+			<tab label="&tabbox.pageinfo.tab.label;"/>
+			<tab label="&tabbox.login.tab.label;"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel id="delicious-post-dialog-tab-pageinfo" style="min-width:32em">
+				<vbox flex="1">
+					<label for="delicious-post-dialog-url" value="&url.label;"/>		
+					<textbox id="delicious-post-dialog-url"/>
+					<label for="delicious-post-dialog-description" value="&description.label;"/>
+					<textbox id="delicious-post-dialog-description"/>
+					<label for="delicious-post-dialog-extended" value="&extended.label;"/>
+					<textbox multiline="true" rows="3" id="delicious-post-dialog-extended"/>
+					<label for="delicious-post-dialog-tags" value="&tags.label;"/>
+					<textbox id="delicious-post-dialog-tags"/>
+					<separator class="thin"/>
+					<hbox>
+					  <checkbox id="delicious-post-dialog-private" label="&privateBkmk.label;" checked="false" hidden="true"/>
+					  <spacer flex="1"/>
+					</hbox>
+				</vbox>
+			</tabpanel>
+			<tabpanel id="delicious-post-dialog-tab-login">
+				<vbox>
+				<separator class="thin"/>
+				<grid>
+				  <columns>
+				    <column/>
+				    <column/>
+				    <column flex="1"/>
+				  </columns>
+				  <rows>
+				    <row align="center">
+						<label for="delicious-post-dialog-username" value="&username.label;"/>
+						<textbox id="delicious-post-dialog-username" onchange="delicious_autofillPassword(this.value)"/>
+				    </row>
+				    <row align="center">
+						<label for="delicious-post-dialog-password" value="&password.label;"/>
+						<textbox id="delicious-post-dialog-password" type="password"/>
+				    </row>
+				  </rows>
+				</grid>
+					<separator/>
+					<checkbox id="delicious-post-dialog-use_password_manager" label="&use_password_manager.label;" checked="false"/>
+				</vbox>
+			</tabpanel>
+		</tabpanels>
+	</tabbox>
+	
+	<separator class="thin"/>
+</dialog>
+
+

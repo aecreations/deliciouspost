@@ -1,0 +1,14 @@
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!ENTITY prefDlg.title "Delicious Gönderisi Seçenekleri">
+<!ENTITY backgrdSave.label "URL'leri arkaplanda gönder">
+<!ENTITY backgrdSave.accesskey "G">
+<!ENTITY notesFromSel.label "Yer imi notlarını seçili metinden otomatik doldur">
+<!ENTITY notesFromSel.accesskey "O">
+<!ENTITY privateBkmks.label "Özel yer imlerine izin ver">
+<!ENTITY privateBkmks.accesskey "Ö">
+<!ENTITY replaceBkmk.label "URL gönderilmişse var olan yer imini koru">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "İletişim penceresi için Alt+Shift+D kullan">
+<!ENTITY enableShortcutKey.accesskey "İ">
+<!ENTITY alwaysPrivate.label "Her zaman seç, Paylaşma seçeneği">
+<!ENTITY alwaysPrivate.accesskey "P">

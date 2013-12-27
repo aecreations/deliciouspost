@@ -1,0 +1,9 @@
+<!-- context menu overlay -->
+<!ENTITY menuitem.label "Post Page to Delicious...">
+<!ENTITY menuitem.link.label "Post Link to Delicious...">
+
+<!-- toolbar button overlay -->
+<!ENTITY toolbarbutton.tooltiptext "Post Page to Delicious">
+<!ENTITY toolbarbutton.label "Delicious Post">
+
+

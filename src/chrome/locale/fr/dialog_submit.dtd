@@ -1,0 +1,13 @@
+<!--  -->
+<!ENTITY title "Publier sur Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Infos sur la page">
+<!ENTITY url.label "URL">
+<!ENTITY description.label "Description">
+<!ENTITY extended.label "Notes (facultatif)">
+<!ENTITY tags.label "Tags identificateurs (séparés par un espace)">
+<!ENTITY tabbox.login.tab.label "Connexion">
+<!ENTITY username.label "Nom d&apos;utilisateur">
+<!ENTITY password.label "Mot de passe">
+<!ENTITY use_password_manager.label "Utiliser le gestionnaire de mots de passe pour mémoriser les identifiants">
+<!ENTITY privateBkmk.label "Ne pas partager">
+<!ENTITY button.accept.label "Publier">

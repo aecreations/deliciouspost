@@ -1,0 +1,16 @@
+<!--  -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!--  -->
+<!ENTITY prefDlg.title "Options de Delicious Post">
+<!ENTITY backgrdSave.label "Publier les marque-pages en tâche de fond">
+<!ENTITY backgrdSave.accesskey "E">
+<!ENTITY notesFromSel.label "Remplir automatiquement les notes de marque-pages avec le texte sélectionné">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Autoriser les marque-pages privés">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Conserver le marque-page existant si l&apos;URL est déjà publiée">
+<!ENTITY replaceBkmk.accesskey "C">
+<!ENTITY enableShortcutKey.label "Utiliser Alt+Maj+D pour afficher la boîte de dialogue">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Toujours activer l'option « Ne pas partager »">
+<!ENTITY alwaysPrivate.accesskey "N">

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+
+<!DOCTYPE window SYSTEM "chrome://aedeliciouspost/locale/deliciouspost.dtd">
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+ id="ae-deliciouspost-preferences" 
+ title="&prefDlg.title;" orient="vertical" buttons="accept,cancel"
+ onload="initDlg()" ondialogaccept="return doOK()"
+ ondialogcancel="return doCancel()">
+
+  <script type="application/javascript">
+  <![CDATA[
+
+    var gStrBundle;
+
+
+    function $(aID) {
+      return document.getElementById(aID);
+    }
+
+
+    function initDlg() {
+      gStrBundle = $("ae-deliciouspost-strings");
+
+      var isPrivateBkmksEnabled = Application.prefs.getValue("extensions.aecreations.deliciouspost.allow_private_bookmarks", true);
+
+      $("background-save").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.background_save", true);
+      $("notes-from-selection").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.notes_from_selection", true);
+      $("private-bookmarks").checked = isPrivateBkmksEnabled;
+      $("replace-bookmark").checked = !(Application.prefs.getValue("extensions.aecreations.deliciouspost.replace_existing_bookmark", false));
+      $("enable-shortcut-key").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.enable_shortcut_key", true);
+      $("always-private").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.always_private", false);
+
+      if (! isPrivateBkmksEnabled) {
+        $("always-private").disabled = true;
+      }
+    }
+
+
+    function showChangedPrefMsg() {
+       var prmptSvc = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+       prmptSvc.alert(window, document.title, gStrBundle.getString("prefChangeMsg"));
+    }
+
+
+    function doOK() {
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.background_save", $("background-save").checked);
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.notes_from_selection", $("notes-from-selection").checked);
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.allow_private_bookmarks", $("private-bookmarks").checked);
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.replace_existing_bookmark", !($("replace-bookmark").checked));
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.enable_shortcut_key", $("enable-shortcut-key").checked);
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.always_private", $("always-private").checked);
+
+      return true;
+    }
+
+
+    function toggleAlwaysPrivateCheckboxDisableState(aEvent) {
+      var privateBkmksElt = aEvent.target;
+      $("always-private").disabled = !privateBkmksElt.checked;
+    }
+
+
+    function doCancel() {
+      return true;
+    }
+
+  ]]>
+  </script>
+
+  <stringbundle id="ae-deliciouspost-strings" 
+   src="chrome://aedeliciouspost/locale/deliciouspost.properties"/>
+
+  <separator class="thin"/>
+  <checkbox id="background-save" label="&backgrdSave.label;" accesskey="&backgrdSave.accesskey;"/>
+  <checkbox id="notes-from-selection" label="&notesFromSel.label;" accesskey="&notesFromSel.accesskey;"/>
+  <checkbox id="private-bookmarks" label="&privateBkmks.label;" accesskey="&privateBkmks.accesskey;" oncommand="toggleAlwaysPrivateCheckboxDisableState(event)"/>
+  <checkbox id="always-private" label="&alwaysPrivate.label;" accesskey="&alwaysPrivate.accesskey;" style="-moz-margin-start:23px;"/>
+  <checkbox id="replace-bookmark" label="&replaceBkmk.label;" accesskey="&replaceBkmk.accesskey;"/>
+  <checkbox id="enable-shortcut-key" label="&enableShortcutKey.label;" accesskey="&enableShortcutKey.accesskey;"  oncommand="showChangedPrefMsg()"/>
+
+  <separator class="thin" style="min-width:25em"/>
+</dialog>

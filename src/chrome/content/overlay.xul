@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://aedeliciouspost-laf/skin/delicious.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://aedeliciouspost/locale/overlay.dtd">
+
+<overlay id="ae-deliciouspost-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+
+  <script type="application/javascript" src="chrome://aedeliciouspost/content/overlay.js"/>
+
+  <stringbundleset id="stringbundleset">
+    <stringbundle id="ae-deliciouspost-strings" src="chrome://aedeliciouspost/locale/deliciouspost.properties"/>
+  </stringbundleset>
+
+  <commandset id="mainCommandSet">
+    <command id="ae_cmd_postToDelicious" 
+     oncommand="extensions.aecreations.deliciousPost.submit()"/>
+  </commandset>
+
+  <keyset id="mainKeyset">
+    <key id="ae_key_postToDelicious" key="D" modifiers="alt shift"
+     command="ae_cmd_postToDelicious"/>
+  </keyset>
+
+  <popup id="contentAreaContextMenu">
+	<menuitem id="ae-deliciouspost-context-page" class="menuitem" insertafter="context-bookmarkpage" label="&menuitem.label;" command="ae_cmd_postToDelicious"/>
+	<menuitem id="ae-deliciouspost-context-link" class="menuitem" insertafter="context-bookmarklink" label="&menuitem.link.label;" command="ae_cmd_postToDelicious" hidden="true"/>
+  </popup>
+
+  <toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="ae-deliciouspost-toolbarbutton"
+		class="toolbarbutton-1"
+		command="ae_cmd_postToDelicious"
+		label="&toolbarbutton.label;"
+		tooltiptext="&toolbarbutton.tooltiptext;"/>
+  </toolbarpalette>
+
+  <statusbar id="status-bar">
+    <statusbarpanel id="ae-deliciouspost-save-progress" class="statusbarpanel-iconic" hidden="true"/>
+  </statusbar>
+
+</overlay>
+
+

@@ -1,0 +1,16 @@
+<!-- General -->
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!-- Preferences dialog -->
+<!ENTITY prefDlg.title "Impostazioni di Delicious Post">
+<!ENTITY backgrdSave.label "Nascondi la finestra di invio quando si pubblicano i link">
+<!ENTITY backgrdSave.accesskey "N">
+<!ENTITY notesFromSel.label "Compila automaticamente le note dei segnalibri con il testo selezionato">
+<!ENTITY notesFromSel.accesskey "C">
+<!ENTITY privateBkmks.label "Permetti i segnalibri privati (escludendone la condivisione)">
+<!ENTITY privateBkmks.accesskey "P">
+<!ENTITY replaceBkmk.label "Conserva i segnalibri esistenti se i relativi URL sono già stati inviati">
+<!ENTITY replaceBkmk.accesskey "s">
+<!ENTITY enableShortcutKey.label "Apri la finestra d'invio del link con la scorciatoia da tastiera Alt+Maiusc+D">
+<!ENTITY enableShortcutKey.accesskey "A">
+<!ENTITY alwaysPrivate.label "Seleziona automaticamente l'opzione per escludere la condivisione">
+<!ENTITY alwaysPrivate.accesskey "z">

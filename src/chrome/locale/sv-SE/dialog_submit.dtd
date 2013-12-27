@@ -1,0 +1,11 @@
+<!ENTITY title "Lägg in på Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Sidinfo">
+<!ENTITY url.label "Url">
+<!ENTITY description.label "Beskrivning">
+<!ENTITY extended.label "Anteckningar (valfritt)">
+<!ENTITY tabbox.login.tab.label "Logga in">
+<!ENTITY username.label "Användarnamn">
+<!ENTITY password.label "Lösenord">
+<!ENTITY use_password_manager.label "Använd lösenordshanteraren för att komma ihåg inloggningsuppgifter">
+<!ENTITY privateBkmk.label "Dela inte">
+<!ENTITY button.accept.label "Lägg in">

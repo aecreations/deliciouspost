@@ -1,0 +1,10 @@
+<!ENTITY deliciousPost.appName "Delicious Post">
+<!ENTITY prefDlg.title "Настройки Delicious Post">
+<!ENTITY backgrdSave.label "Отправлять ссылки в фоне">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Автозаполнение описания закладки на основе выделенного текста">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Разрешить приватные закладки">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Сохранить существующую закладку, если адрес уже размещен">
+<!ENTITY replaceBkmk.accesskey "K">
