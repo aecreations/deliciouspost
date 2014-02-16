@@ -22,7 +22,7 @@
     <em:name>Delicious Post</em:name>
     <em:creator>AE Creations</em:creator>
     <em:description>Post the current page or link to Delicious.</em:description>
-    <em:homepageURL>http://aecreations.mozdev.org/</em:homepageURL>
+    <em:homepageURL>http://aecreations.sourceforge.net/</em:homepageURL>
     <em:iconURL>chrome://aedeliciouspost/skin/icon.png</em:iconURL>
     <em:contributor>Babelzilla Translators</em:contributor>
 
