@@ -1,4 +1,5 @@
 
+
 Components.utils.import("resource://aedeliciouspost/modules/aeUtils.js");
 Components.utils.import("resource://aedeliciouspost/modules/aeConstants.js");
 Components.utils.import("resource://aedeliciouspost/modules/aeDeliciousPostLogin.js");
@@ -69,6 +70,51 @@ document.getElementById('delicious-post-dialog-description').value = description
 
 
 function delicious_post_dialog_accept() {
+
+  function getEncodedStr(aString)
+  {
+    // See <https://github.com/zmanring/chrome-ext-delicious/pull/56> for
+    // how an author of a Delicious extension for Google Chrome handled an
+    // issue similar to Delicious Post issue #2.
+    let rv = "";
+    let strArray = aString.split("");
+
+    if (typeof(aString) === "string") {
+      for (let i = 0; i < aString.length; i++) {
+	if (aString.charCodeAt(i) > 127) {
+	  let chr = "";
+
+	  // Handling of some commonly-used special chars that aren't decoded
+	  // properly by Delicious after posting.
+	  switch (aString.charCodeAt(i)) {
+	  case 0x2014: // Em dash
+	    chr = "--";
+	    break;
+	  case 0x00AB:  // Left-pointing double angle quotation mark
+	    chr = "<<";
+	    break;
+	  case 0x00BB:  // Right-pointing double angle quotation mark
+	    chr = ">>";
+	    break;
+	  case 0x2022:  // Bullet
+	    chr = "-";
+	    break;
+	  default:
+	    chr = strArray[i];
+	    break;
+	  }
+
+	  rv += encodeURIComponent(chr).replace(/\'/g,"%27")
+	                               .replace(/\"/g,"%22");
+	}
+	else {
+	  rv += strArray[i];
+	}
+      }
+    }
+    return rv;
+  }
+
   delicious_postDialog();
 	
   // general stuff
@@ -120,8 +166,8 @@ function delicious_post_dialog_accept() {
   // build the entire query string
   var querystring = aeConstants.DELICIOUS_API_URL 
     + 'posts/add?url=' + encodeURIComponent(url) 
-    + '&description=' + encodeURIComponent(description) 
-    + '&extended=' + encodeURIComponent(extended) 
+    + '&description=' + encodeURIComponent(getEncodedStr(description)) 
+    + '&extended=' + encodeURIComponent(getEncodedStr(extended))
     + '&tags=' + encodeURIComponent(tags) 
     + '&dt=' + isodatestamp;
 
