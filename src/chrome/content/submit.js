@@ -73,7 +73,7 @@ function delicious_post_dialog_accept() {
 
   function getEncodedStr(aString)
   {
-    let isDblEncodeSpecChars = Application.prefs.getPref("extensions.aecreations.deliciouspost.double_encode_special_chars", true);
+    let isDblEncodeSpecChars = Application.prefs.getValue("extensions.aecreations.deliciouspost.double_encode_special_chars", true);
     if (! isDblEncodeSpecChars) {
       return aString;
     }
@@ -208,8 +208,8 @@ function delicious_post_dialog_accept() {
     // If the originating browser window was closed prior to the user clicking
     // Post, then just post the URL from this dialog
     if (! hostAppWnd.closed) {
-      if (hostAppWnd && hostAppWnd.extensions && hostAppWnd.extensions.aecreations && hostAppWnd.extensions.aecreations.deliciousPost) {
-	var aeDeliciousPost = hostAppWnd.extensions.aecreations.deliciousPost;
+      if (hostAppWnd && hostAppWnd.aecreations && hostAppWnd.aecreations.deliciousPost) {
+	var aeDeliciousPost = hostAppWnd.aecreations.deliciousPost;
 	aeDeliciousPost.postBookmark(querystring, username, password);
 
 	return true;
