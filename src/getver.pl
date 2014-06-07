@@ -1,4 +1,4 @@
-#!perl
+#!/cygdrive/c/Perl/bin/perl.exe
 
 # Retrieves the version number of the Firefox/Thunderbird extension.
 # This script must be executed in the same directory as the extension's
