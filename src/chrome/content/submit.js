@@ -187,6 +187,9 @@ function delicious_post_dialog_accept() {
   if (dlgArgs.keepExisting) {
     querystring += "&replace=no";
   }
+  else {
+    querystring += "&replace=yes";
+  }
 
   // Encode the username and password as they will be sent as part of the
   // HTTP request
