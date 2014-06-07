@@ -8,4 +8,4 @@ pref("extensions.aecreations.deliciouspost.always_private", false);
 pref("extensions.aecreations.deliciouspost.background_save", true);
 pref("extensions.aecreations.deliciouspost.replace_existing_bookmark", false);
 pref("extensions.aecreations.deliciouspost.enable_shortcut_key", true);
-
+pref("extensions.aecreations.deliciouspost.double_encode_special_chars", true);
