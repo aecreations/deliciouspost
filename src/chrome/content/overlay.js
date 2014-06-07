@@ -1,28 +1,24 @@
 
-if (! ('extensions' in window)) {
-  window.extensions = {};
+if (! ("aecreations" in window)) {
+  window.aecreations = {};
 }
 
-if (! ('aecreations' in window.extensions)) {
-  window.extensions.aecreations = {};
-}
-
-if (! ('deliciousPost' in window.extensions.aecreations)) {
-  window.extensions.aecreations.deliciousPost = {};
+if (! ("deliciousPost" in window.aecreations)) {
+  window.aecreations.deliciousPost = {};
 }
 else {
   throw new Error("deliciousPost object already defined");
 }
 
 
-window.extensions.aecreations.deliciousPost = {
+window.aecreations.deliciousPost = {
   _strBundle: null,
   _saveProgressElt: null,
 
   
   handleEvent: function (aEvent)
   {
-    var that = extensions.aecreations.deliciousPost;
+    var that = window.aecreations.deliciousPost;
       
     if (aEvent.type == "load") {
       that.init();
@@ -145,8 +141,8 @@ window.extensions.aecreations.deliciousPost = {
     req.open('GET', aRequestURL, true, aDeliciousUserID, aDeliciousPswd);
     
     req.onreadystatechange = function (aEvent) {
-      var that = extensions.aecreations.deliciousPost;
-      var saveProgressElt = extensions.aecreations.deliciousPost._saveProgressElt;
+      var that = window.aecreations.deliciousPost;
+      var saveProgressElt = window.aecreations.deliciousPost._saveProgressElt;
       var progressIndDelay = 3000;
 
       if (req.readyState == 1) { // loading
@@ -226,7 +222,7 @@ window.extensions.aecreations.deliciousPost = {
 	  progressIndDelay = 1;
 	}
 
-	window.setTimeout(function () { extensions.aecreations.deliciousPost.clearSaveProgressIndicator() }, progressIndDelay);
+	window.setTimeout(function () { window.aecreations.deliciousPost.clearSaveProgressIndicator() }, progressIndDelay);
       }
     };
 
@@ -236,7 +232,7 @@ window.extensions.aecreations.deliciousPost = {
   
   clearSaveProgressIndicator: function ()
   {
-    var that = extensions.aecreations.deliciousPost;
+    var that = window.aecreations.deliciousPost;
     that._saveProgressElt.hidden = true;
     that._saveProgressElt.removeAttribute("status");
   },
@@ -260,11 +256,11 @@ window.extensions.aecreations.deliciousPost = {
 };
 
 Components.utils.import("resource://aedeliciouspost/modules/aeUtils.js",
-			window.extensions.aecreations.deliciousPost);
+			window.aecreations.deliciousPost);
 Components.utils.import("resource://aedeliciouspost/modules/aeConstants.js",
-                        window.extensions.aecreations.deliciousPost);
+                        window.aecreations.deliciousPost);
 
-window.addEventListener("load", extensions.aecreations.deliciousPost, false);
-window.addEventListener("unload", extensions.aecreations.deliciousPost, false);
+window.addEventListener("load", window.aecreations.deliciousPost, false);
+window.addEventListener("unload", window.aecreations.deliciousPost, false);
 
 
