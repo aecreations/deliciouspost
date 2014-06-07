@@ -73,6 +73,11 @@ function delicious_post_dialog_accept() {
 
   function getEncodedStr(aString)
   {
+    let isDblEncodeSpecChars = Application.prefs.getPref("extensions.aecreations.deliciouspost.double_encode_special_chars", true);
+    if (! isDblEncodeSpecChars) {
+      return aString;
+    }
+
     // See <https://github.com/zmanring/chrome-ext-delicious/pull/56> for
     // how an author of a Delicious extension for Google Chrome handled an
     // issue similar to Delicious Post issue #2.
@@ -96,7 +101,11 @@ function delicious_post_dialog_accept() {
 	  case 0x00BB:  // Right-pointing double angle quotation mark
 	    chr = ">>";
 	    break;
+	  case 0x25B6:  // Black right-pointing triangle
+	    chr = "";   // (used in YouTube page titles for playing videos)
+	    break;
 	  case 0x2022:  // Bullet
+	  case 0x00B7:  // Middle dot
 	    chr = "-";
 	    break;
 	  default:
