@@ -15,7 +15,7 @@
 
   <commandset id="mainCommandSet">
     <command id="ae_cmd_postToDelicious" 
-     oncommand="extensions.aecreations.deliciousPost.submit()"/>
+     oncommand="window.aecreations.deliciousPost.submit()"/>
   </commandset>
 
   <keyset id="mainKeyset">
