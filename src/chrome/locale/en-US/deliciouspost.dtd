@@ -9,8 +9,8 @@
 <!ENTITY notesFromSel.accesskey "A">
 <!ENTITY privateBkmks.label "Allow private bookmarks">
 <!ENTITY privateBkmks.accesskey "v">
-<!ENTITY replaceBkmk.label "Keep existing bookmark if the URL is already posted">
-<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY keepBkmk.label "If bookmark already exists, don't replace it">
+<!ENTITY keepBkmk.accesskey "K">
 <!ENTITY enableShortcutKey.label "Use Alt+Shift+D to display dialog">
 <!ENTITY enableShortcutKey.accesskey "U">
 <!ENTITY alwaysPrivate.label "Always select Do Not Share option">
