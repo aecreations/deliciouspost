@@ -172,6 +172,13 @@ window.aecreations.deliciousPost = {
 	      saveProgressElt.setAttribute("status", "failure");
 
 	      if (resultCode == that.aeConstants.RESULTCODE_ITEM_ALREADY_EXISTS) {
+		if (showNotification) {
+                  try {
+                    alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("itemAlreadyExists"));
+	          }
+                  catch (e) {}
+		  return;
+                }
 		errMsg = that._strBundle.getString("itemAlreadyExists");
 	      }
 	      else {
@@ -196,7 +203,7 @@ window.aecreations.deliciousPost = {
             try {
               alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("statussuccess"));
 	    }
-	    catch (e) { window.alert(e); }
+	    catch (e) {}
           }
 	}
 	// HTTP error (response code other than 200)
