@@ -31,6 +31,7 @@
       $("replace-bookmark").checked = !(Application.prefs.getValue("extensions.aecreations.deliciouspost.replace_existing_bookmark", false));
       $("enable-shortcut-key").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.enable_shortcut_key", true);
       $("always-private").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.always_private", false);
+      $("show-notification").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
 
       if (! isPrivateBkmksEnabled) {
         $("always-private").disabled = true;
@@ -51,6 +52,7 @@
       Application.prefs.setValue("extensions.aecreations.deliciouspost.replace_existing_bookmark", !($("replace-bookmark").checked));
       Application.prefs.setValue("extensions.aecreations.deliciouspost.enable_shortcut_key", $("enable-shortcut-key").checked);
       Application.prefs.setValue("extensions.aecreations.deliciouspost.always_private", $("always-private").checked);
+      Application.prefs.setValue("extensions.aecreations.deliciouspost.show_notification", $("show-notification").checked);
 
       return true;
     }
@@ -77,6 +79,8 @@
   <checkbox id="notes-from-selection" label="&notesFromSel.label;" accesskey="&notesFromSel.accesskey;"/>
   <checkbox id="private-bookmarks" label="&privateBkmks.label;" accesskey="&privateBkmks.accesskey;" oncommand="toggleAlwaysPrivateCheckboxDisableState(event)"/>
   <checkbox id="always-private" label="&alwaysPrivate.label;" accesskey="&alwaysPrivate.accesskey;" style="-moz-margin-start:23px;"/>
+  <checkbox id="show-notification" label="&showNotification.label;" 
+   accesskey="&showNotification.accesskey;"/>
   <checkbox id="replace-bookmark" label="&replaceBkmk.label;" accesskey="&replaceBkmk.accesskey;"/>
   <checkbox id="enable-shortcut-key" label="&enableShortcutKey.label;" accesskey="&enableShortcutKey.accesskey;"  oncommand="showChangedPrefMsg()"/>
 
