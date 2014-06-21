@@ -81,7 +81,7 @@
   <checkbox id="always-private" label="&alwaysPrivate.label;" accesskey="&alwaysPrivate.accesskey;" style="-moz-margin-start:23px;"/>
   <checkbox id="show-notification" label="&showNotification.label;" 
    accesskey="&showNotification.accesskey;"/>
-  <checkbox id="replace-bookmark" label="&replaceBkmk.label;" accesskey="&replaceBkmk.accesskey;"/>
+  <checkbox id="replace-bookmark" label="&keepBkmk.label;" accesskey="&keepBkmk.accesskey;"/>
   <checkbox id="enable-shortcut-key" label="&enableShortcutKey.label;" accesskey="&enableShortcutKey.accesskey;"  oncommand="showChangedPrefMsg()"/>
 
   <separator class="thin" style="min-width:25em"/>
