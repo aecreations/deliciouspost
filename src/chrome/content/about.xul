@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://aedeliciouspost/skin/about.css" type="text/css"?> 
+
+<!DOCTYPE dialog SYSTEM "chrome://aedeliciouspost/locale/deliciouspost.dtd">
+
+<dialog id="ae-deliciouspost-about"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        title="&aboutDlg.title;"
+        onload="init();"
+        buttons="accept"
+        buttonlabelaccept="&closeBtn.label;" buttoniconaccept="close"
+        onaccept="window.close();">
+
+  <script type="application/javascript">
+  <![CDATA[
+
+    Components.utils.import("resource://gre/modules/AddonManager.jsm");
+    Components.utils.import("resource://aedeliciouspost/modules/aeUtils.js");
+
+
+    function $(aID)
+    {
+      return document.getElementById(aID); 
+    }
+
+
+    function init()
+    {
+      let extID = aeUtils.getExtensionID();
+      let strBundle = $("ae-deliciouspost-strings");
+
+      AddonManager.getAddonByID(extID, function (aAddon) {
+        $("extensionVersion").value = strBundle.getFormattedString("extVersion", [aAddon.version]);
+        let desc = document.createTextNode(aAddon.description);
+        $("extensionDescription").appendChild(desc);
+        $("extensionCreator").value = aAddon.creator.name;
+        let contrib = document.createElement("label");
+        contrib.setAttribute("value", aAddon.contributors[0].name);
+        $("contributorsBox").appendChild(contrib);
+        $("extensionHomepage").setAttribute("data-homepageurl", aAddon.homepageURL);
+
+        window.sizeToContent();
+      });
+    }
+
+
+    function loadHomepage(aEvent)
+    {
+      window.close();
+
+      let wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
+                         .getService(Components.interfaces.nsIWindowMediator);
+      let wnd = wm.getMostRecentWindow("navigator:browser");
+
+      wnd.gBrowser.selectedTab = wnd.gBrowser.addTab(aEvent.target.getAttribute("data-homepageurl"));
+    }
+
+  ]]>
+  </script>
+  
+  <stringbundleset id="aboutSet">
+    <stringbundle id="ae-deliciouspost-strings" src="chrome://aedeliciouspost/locale/deliciouspost.properties"/>
+
+  </stringbundleset>
+
+  <vbox id="clientBox" flex="1">
+    <label id="extensionName" value="&deliciousPost.appName;"/>
+    <label id="extensionVersion"/>
+    <description id="extensionDescription" class="boxIndent"></description>
+    <separator class="thin"/>
+
+    <label id="extensionCreatorLabel" class="sectionTitle" value="&createdBy.label;"/>
+    <hbox id="creatorBox">
+      <label id="extensionCreator" flex="1"/>
+
+      <label id="extensionHomepage" class="text-link" 
+       value="&visitHomePg.label;" data-homepageurl=""
+       onclick="if (event.button == 0) { loadHomepage(event); }"/>
+    </hbox>
+      
+    <label id="extensionContributors" class="sectionTitle" value="&contributors.label;"/>
+    <vbox flex="1" id="contributorsBox" class="boxIndent"></vbox>
+
+    <description id="disclaimer">&disclaimer.desc;</description>
+  </vbox>
+
+  <separator id="groove" class="groove"/>
+
+</dialog>
+
+        
