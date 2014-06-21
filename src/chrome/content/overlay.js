@@ -144,6 +144,9 @@ window.aecreations.deliciousPost = {
       var that = window.aecreations.deliciousPost;
       var saveProgressElt = window.aecreations.deliciousPost._saveProgressElt;
       var progressIndDelay = 3000;
+      var alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
+                                .getService(Components.interfaces.nsIAlertsService);
+      var showNotification = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
 
       if (req.readyState == 1) { // loading
 	saveProgressElt.hidden = false;
@@ -163,7 +166,7 @@ window.aecreations.deliciousPost = {
 	  if (result && result.length > 0) {
 	    var resultCode = result[0].getAttribute("code");
 	    if (resultCode == that.aeConstants.RESULTCODE_DONE) {
-	      saveProgressElt.setAttribute("status", "success");	      
+	      saveProgressElt.setAttribute("status", "success");
 	    }
 	    else {
 	      saveProgressElt.setAttribute("status", "failure");
@@ -188,6 +191,13 @@ window.aecreations.deliciousPost = {
 	    return;
 	  }
 	  saveProgressElt.setAttribute("status", "success");
+
+	  if (showNotification) {
+            try {
+              alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("statussuccess"));
+	    }
+	    catch (e) { window.alert(e); }
+          }
 	}
 	// HTTP error (response code other than 200)
 	else {
