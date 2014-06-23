@@ -1,21 +1,33 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* Integration with Firefox 28 and older. */
 #ae-deliciouspost-toolbarbutton {
-	list-style-image: url(chrome://aedeliciouspost/skin/all/buttons.png);
-	-moz-image-region: rect(0 33px 24px 0);
+	list-style-image: url(chrome://aedeliciouspost/skin/images/hostappIcon.png);
+	-moz-image-region: rect(0, 33px, 24px, 0);
 }
 
 #ae-deliciouspost-toolbarbutton:hover {
-	-moz-image-region: rect(0 66px 24px 33px);
+	-moz-image-region: rect(0, 66px, 24px, 33px);
 }
 
 toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton {
-	-moz-image-region: rect(0 88px 16px 66px);
+	-moz-image-region: rect(0, 88px, 16px, 66px);
 }
 
 toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton:hover {
-	-moz-image-region: rect(0 110px 16px 88px);
+	-moz-image-region: rect(0, 110px, 16px, 88px);
 }
+
+/* Firefox Australis integration. */
+#ae-deliciouspost-toolbarbutton[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0px, 110px, 16px, 88px);
+}
+
+#ae-deliciouspost-toolbarbutton[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"][removable="true"] > #ae-deliciouspost-toolbarbutton {
+  -moz-image-region: rect(24px, 32px, 56px, 0px);
+}
+
 
 /* Status bar icon to indicate background save progress */
 #ae-deliciouspost-save-progress {
@@ -23,13 +35,13 @@ toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton:hover {
 }
 
 #ae-deliciouspost-save-progress[status="saving"] {
-  list-style-image: url("chrome://aedeliciouspost/skin/all/save.png");
+  list-style-image: url("chrome://aedeliciouspost/skin/images/save.png");
 }
 
 #ae-deliciouspost-save-progress[status="success"] {
-  list-style-image: url("chrome://aedeliciouspost/skin/all/save_success.png");
+  list-style-image: url("chrome://aedeliciouspost/skin/images/save_success.png");
 }
 
 #ae-deliciouspost-save-progress[status="failure"] {
-  list-style-image: url("chrome://aedeliciouspost/skin/all/save_failure.png");
+  list-style-image: url("chrome://aedeliciouspost/skin/images/save_failure.png");
 }
