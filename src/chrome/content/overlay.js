@@ -174,7 +174,7 @@ window.aecreations.deliciousPost = {
 	      if (resultCode == that.aeConstants.RESULTCODE_ITEM_ALREADY_EXISTS) {
 		if (showNotification) {
                   try {
-                    alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("itemAlreadyExists"));
+                    alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("itemAlreadyExists"));
 	          }
                   catch (e) {}
 		  return;
@@ -201,7 +201,7 @@ window.aecreations.deliciousPost = {
 
 	  if (showNotification) {
             try {
-              alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("statussuccess"));
+              alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("statussuccess"));
 	    }
 	    catch (e) {}
           }
