@@ -16,7 +16,9 @@
 <!ENTITY alwaysPrivate.label "Always select Do Not Share option">
 <!ENTITY alwaysPrivate.accesskey "D">
 <!ENTITY showNotification.label "Show notification when the URL is successfully posted">
-<!ENTITY showNotification.accesskey "S">
+<!ENTITY showNotification.accesskey "n">
+<!ENTITY showProgressIcon.label "Show progress icon in the status bar (requires Status-4-Evar)">
+<!ENTITY showProgressIcon.accesskey "i">
 
 <!-- About dialog -->
 <!ENTITY aboutDlg.title "About Delicious Post">
