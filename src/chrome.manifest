@@ -2,8 +2,9 @@ content	aedeliciouspost	chrome/content/
 resource	aedeliciouspost	./
 skin	aedeliciouspost	classic chrome/skin/
 skin	aedeliciouspost-laf	classic	chrome/skin/all/
-skin	aedeliciouspost-laf	classic	chrome/skin/win/	os=WINNT	appversion>3.6.*
-skin	aedeliciouspost-laf	classic	chrome/skin/mac/	os=Darwin	appversion>3.6.*
+
+# Linux-specific styling
+skin	aedeliciouspost-laf	classic	chrome/skin/linux/	os=Linux	appversion<=28.*
 
 overlay	chrome://browser/content/browser.xul	chrome://aedeliciouspost/content/overlay.xul
 
