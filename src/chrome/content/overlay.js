@@ -270,11 +270,13 @@ window.aecreations.deliciousPost = {
   initSaveProgressIndicator: function ()
   {
     if (this.isAustralisUI()) {
-      // TEMPORARY
-      // TO DO: Set this flag to 'true' only if the Status-4-Evar extension is
-      // installed.
-      this._saveProgressIndicatorEnabled = true;
-      // END TEMPORARY
+      this.AddonManager.getAddonByID(this.aeConstants.S4E_EXTENSION_ID, function (aAddon) {
+	if (aAddon && aAddon.isActive) {
+          let that = window.aecreations.deliciousPost;
+          that.aeUtils.log("AE Delicious Post: Status-4-Evar extension has been detected, and is currently active.");
+          that._saveProgressIndicatorEnabled = true;
+	}
+      });
     }
   },
 
@@ -344,6 +346,8 @@ window.aecreations.deliciousPost = {
   }
 };
 
+Components.utils.import("resource://gre/modules/AddonManager.jsm",
+			window.aecreations.deliciousPost);
 Components.utils.import("resource://aedeliciouspost/modules/aeUtils.js",
 			window.aecreations.deliciousPost);
 Components.utils.import("resource://aedeliciouspost/modules/aeConstants.js",
