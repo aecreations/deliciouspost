@@ -32,7 +32,14 @@
       $("enable-shortcut-key").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.enable_shortcut_key", true);
       $("always-private").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.always_private", false);
       $("show-notification").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
-      $("show-progress-icon").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
+
+      // Available on Firefox 29 and newer.
+      if (parseInt(Application.version) < 29) {
+        $("show-progress-icon").hidden = true;
+      }
+      else {
+        $("show-progress-icon").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
+      }
 
       if (! isPrivateBkmksEnabled) {
         $("always-private").disabled = true;
