@@ -3,7 +3,6 @@
 <!ENTITY backgrdSave.label "在背景中发布URL">
 <!ENTITY backgrdSave.accesskey "P">
 <!ENTITY notesFromSel.label "从选择的文字中自动填写书签标签">
-<!ENTITY notesFromSel.accesskey "来自Sel.accesskey的标签">
 <!ENTITY privateBkmks.label "允许私人书签">
 <!ENTITY privateBkmks.accesskey "V">
 <!ENTITY replaceBkmk.label "如果URL已被发布，则保持已存在的书签">

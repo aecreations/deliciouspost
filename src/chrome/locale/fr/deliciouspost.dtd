@@ -12,5 +12,5 @@
 <!ENTITY replaceBkmk.accesskey "C">
 <!ENTITY enableShortcutKey.label "Utiliser Alt+Maj+D pour afficher la boîte de dialogue">
 <!ENTITY enableShortcutKey.accesskey "U">
-<!ENTITY alwaysPrivate.label "Toujours activer l'option « Ne pas partager »">
+<!ENTITY alwaysPrivate.label "Toujours activer l\'option « Ne pas partager »">
 <!ENTITY alwaysPrivate.accesskey "N">

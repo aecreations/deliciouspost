@@ -1,6 +1,6 @@
 <!ENTITY deliciousPost.appName "Delicious Post">
 <!ENTITY prefDlg.title "Delicious Gönderisi Seçenekleri">
-<!ENTITY backgrdSave.label "URL'leri arkaplanda gönder">
+<!ENTITY backgrdSave.label "URL\'leri arkaplanda gönder">
 <!ENTITY backgrdSave.accesskey "G">
 <!ENTITY notesFromSel.label "Yer imi notlarını seçili metinden otomatik doldur">
 <!ENTITY notesFromSel.accesskey "O">

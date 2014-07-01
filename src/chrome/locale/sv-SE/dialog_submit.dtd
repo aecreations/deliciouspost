@@ -3,6 +3,7 @@
 <!ENTITY url.label "Url">
 <!ENTITY description.label "Beskrivning">
 <!ENTITY extended.label "Anteckningar (valfritt)">
+<!ENTITY tags.label "Taggar (skilj åt med mellanslag)">
 <!ENTITY tabbox.login.tab.label "Logga in">
 <!ENTITY username.label "Användarnamn">
 <!ENTITY password.label "Lösenord">
