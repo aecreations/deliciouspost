@@ -158,7 +158,7 @@ window.aecreations.deliciousPost = {
       var that = window.aecreations.deliciousPost;
       that.aeUtils.log("AE Delicious Post: req.readyState = " + req.readyState);
 
-      var progressIndDelay = 4000;
+      var progressIndDelay = that.aeConstants.PROGRESS_INDICATOR_DELAY;
       var alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
                                 .getService(Components.interfaces.nsIAlertsService);
       var showNotification = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
