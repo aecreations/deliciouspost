@@ -36,10 +36,6 @@
 		tooltiptext="&toolbarbutton.tooltiptext;"/>
   </toolbarpalette>
 
-  <statusbar id="status-bar">
-    <statusbarpanel id="ae-deliciouspost-save-progress" class="statusbarpanel-iconic" hidden="true"/>
-  </statusbar>
-
 </overlay>
 
 
