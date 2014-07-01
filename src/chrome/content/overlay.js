@@ -13,7 +13,7 @@ else {
 
 window.aecreations.deliciousPost = {
   _strBundle: null,
-  _saveProgressElt: null,
+  _saveProgressIndicatorEnabled: false,
 
   
   handleEvent: function (aEvent)
@@ -31,14 +31,25 @@ window.aecreations.deliciousPost = {
       document.getElementById("contentAreaContextMenu")
               .removeEventListener("popupshowing", 
 				   that.initContentAreaContextMenu, false);
+
+      if (that._saveProgressIndicatorEnabled) {
+	that.destroySaveProgressIndicator();
+      }
     }
+  },
+
+
+  isAustralisUI: function ()
+  {
+    return document.getElementById("PanelUI-menu-button") != null;
   },
 
 
   init: function ()
   {
     this._strBundle = document.getElementById("ae-deliciouspost-strings");
-    this._saveProgressElt = document.getElementById("ae-deliciouspost-save-progress");
+    this.initSaveProgressIndicator();
+
     var cxtMenu = document.getElementById('contentAreaContextMenu');
     cxtMenu.addEventListener('popupshowing', this.initContentAreaContextMenu, false);
 
@@ -140,25 +151,33 @@ window.aecreations.deliciousPost = {
     // Make an asynchronous request
     req.open('GET', aRequestURL, true, aDeliciousUserID, aDeliciousPswd);
     
+    this.showSaveProgressIndicator();
+    this.setSaveProgressIndicatorStatus(this.aeConstants.SAVESTATUS_SAVING)
+
     req.onreadystatechange = function (aEvent) {
       var that = window.aecreations.deliciousPost;
-      var saveProgressElt = window.aecreations.deliciousPost._saveProgressElt;
-      var progressIndDelay = 3000;
+      that.aeUtils.log("AE Delicious Post: req.readyState = " + req.readyState);
+
+      var progressIndDelay = 4000;
       var alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
                                 .getService(Components.interfaces.nsIAlertsService);
       var showNotification = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
 
-      if (req.readyState == 1) { // loading
-	saveProgressElt.hidden = false;
-	saveProgressElt.setAttribute("status", "saving");
+      if (req.readyState == 1       // send() has not been called yet
+	  || req.readyState == 2    // send() called; headers/status available
+	  || req.readyState == 3) { // Downloading response
+	// NOTE: This event handler doesn't seem to be firing on the above
+	// 'readyState' values.
+	that.showSaveProgressIndicator();
+	that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_SAVING);
       }
       else if (req.readyState == 4) { // completed
 	if (req.status == 200) {  // http 200 - ok
 	  var responseXML = req.responseXML;
 	  if (! responseXML) {
-	    saveProgressElt.setAttribute("status", "failure");
+	    that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_FAILURE);
 	    that.alert(that._strBundle.getString("noResponse"));
-	    saveProgressElt.hidden = true;
+	    that.hideSaveProgressIndicator();
 	    return;
 	  }
 
@@ -166,10 +185,10 @@ window.aecreations.deliciousPost = {
 	  if (result && result.length > 0) {
 	    var resultCode = result[0].getAttribute("code");
 	    if (resultCode == that.aeConstants.RESULTCODE_DONE) {
-	      saveProgressElt.setAttribute("status", "success");
+	      that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_SUCCESS);
 	    }
 	    else {
-	      saveProgressElt.setAttribute("status", "failure");
+	      that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_FAILURE);
 
 	      if (resultCode == that.aeConstants.RESULTCODE_ITEM_ALREADY_EXISTS) {
 		if (showNotification) {
@@ -177,6 +196,7 @@ window.aecreations.deliciousPost = {
                     alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("itemAlreadyExists"));
 	          }
                   catch (e) {}
+		  window.setTimeout(function (aEvent) { window.aecreations.deliciousPost.hideSaveProgressIndicator() }, progressIndDelay);
 		  return;
                 }
 		errMsg = that._strBundle.getString("itemAlreadyExists");
@@ -189,15 +209,15 @@ window.aecreations.deliciousPost = {
 	  }
 	  else {
 	    errMsg = that._strBundle.getString("unexpectedError");
-	    saveProgressElt.setAttribute("status", "failure");
+	    that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_FAILURE);
 	  }
 
 	  if (errMsg) {
 	    that.alert(errMsg);
-	    saveProgressElt.hidden = true;
+	    that.hideSaveProgressIndicator();
 	    return;
 	  }
-	  saveProgressElt.setAttribute("status", "success");
+	  that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_SUCCESS);
 
 	  if (showNotification) {
             try {
@@ -234,12 +254,12 @@ window.aecreations.deliciousPost = {
 	    errMsg = that._strBundle.getString("unexpectedError");
 	  }
 
-	  saveProgressElt.setAttribute("status", "failure");
+	  that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_FAILURE);
 	  that.alert(errMsg);
 	  progressIndDelay = 1;
 	}
 
-	window.setTimeout(function () { window.aecreations.deliciousPost.clearSaveProgressIndicator() }, progressIndDelay);
+	window.setTimeout(function (aEvent) { window.aecreations.deliciousPost.hideSaveProgressIndicator() }, progressIndDelay);
       }
     };
 
@@ -247,11 +267,63 @@ window.aecreations.deliciousPost = {
   },
 
   
-  clearSaveProgressIndicator: function ()
+  initSaveProgressIndicator: function ()
   {
-    var that = window.aecreations.deliciousPost;
-    that._saveProgressElt.hidden = true;
-    that._saveProgressElt.removeAttribute("status");
+    if (this.isAustralisUI()) {
+      // TEMPORARY
+      // TO DO: Set this flag to 'true' only if the Status-4-Evar extension is
+      // installed.
+      this._saveProgressIndicatorEnabled = true;
+      // END TEMPORARY
+    }
+  },
+
+
+  setSaveProgressIndicatorStatus: function (aStatus)
+  {
+    if (! this._saveProgressIndicatorEnabled) {
+      return;
+    }
+
+    if (CustomizableUI.getPlacementOfWidget("ae-deliciouspost-save-progress") != null) {
+      CustomizableUI.destroyWidget("ae-deliciouspost-save-progress");
+    }
+
+    try {
+      CustomizableUI.createWidget({
+	id: "ae-deliciouspost-save-progress",
+        type: "custom",
+        defaultArea: this.aeConstants.S4E_STATUSBAR_AREA_ID,
+        onBuild: function (aDocument) {
+          let that = aDocument.defaultView.aecreations.deliciouspost;
+          let statusBarPanel = aDocument.createElementNS("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul", "statusbarpanel");
+          statusBarPanel.id = "ae-deliciouspost-save-progress";
+	  statusBarPanel.className = "statusbarpanel-iconic";
+          statusBarPanel.setAttribute("status", aStatus);
+
+          return statusBarPanel;
+        }
+      });
+    }
+    catch (e) {
+      this.aeUtils.log("AE Delicious Post: Exception thrown by CustomizableUI.createWidget(): " + e); 
+    }
+  },
+
+
+  showSaveProgressIndicator: function ()
+  {
+    if (this._saveProgressIndicatorEnabled) {
+      // ...
+    }
+  },
+
+
+  hideSaveProgressIndicator: function ()
+  {
+    if (this._saveProgressIndicatorEnabled) {
+      CustomizableUI.destroyWidget("ae-deliciouspost-save-progress");
+    }
   },
 
 
