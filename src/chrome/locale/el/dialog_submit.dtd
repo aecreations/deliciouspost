@@ -1,0 +1,12 @@
+<!ENTITY title "Αποστολή στο Delicious">
+<!ENTITY tabbox.pageinfo.tab.label "Πληροφορίες ιστοσελίδας">
+<!ENTITY url.label "Διεύθυνση ιστοσελίδας">
+<!ENTITY description.label "Περιγραφή">
+<!ENTITY extended.label "Σχόλια (προαιρετικό)">
+<!ENTITY tags.label "Ετικέτες (χωρισμένες με κόμα)">
+<!ENTITY tabbox.login.tab.label "Είσοδος">
+<!ENTITY username.label "Όνομα Χρήστη">
+<!ENTITY password.label "Κωδικός">
+<!ENTITY use_password_manager.label "Χρησιμοποίησε τον Διαχειριστή Κωδικών για απομνημόνευση των στοιχίων εισόδου (Όνομα Χρήστη και Κωδικού)">
+<!ENTITY privateBkmk.label "ΜΗΝ το διαμοιράσεις">
+<!ENTITY button.accept.label "Αποστολή">

@@ -1,0 +1,14 @@
+<!ENTITY deliciousPost.appName "Αποστολή στο Delicious">
+<!ENTITY prefDlg.title "Παράμετροι αποστολής στο Delicious">
+<!ENTITY backgrdSave.label "Αποστολή διευθύνσεων ιστοσελίδων στο παρασκήνιο">
+<!ENTITY backgrdSave.accesskey "P">
+<!ENTITY notesFromSel.label "Αυτόματη συμπλήρωση σημείωσης με το επιλεγμένο κείμενο">
+<!ENTITY notesFromSel.accesskey "A">
+<!ENTITY privateBkmks.label "Επέτρεψε ιδιωτικούς σελιδοδείκτες">
+<!ENTITY privateBkmks.accesskey "v">
+<!ENTITY replaceBkmk.label "Κράτησε το σελιδοδείκτη που υπάρχει εάν η διεύθυνση της ιστοσελίδας έχει αποσταλεί.">
+<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY enableShortcutKey.label "Χρησιμοποιήστε Alt+Shift+D για να εμφανιστεί ο διάλογος">
+<!ENTITY enableShortcutKey.accesskey "U">
+<!ENTITY alwaysPrivate.label "Πάντοτε να επιλέγεται η παράμετρος Μη Διαμοιρασμός">
+<!ENTITY alwaysPrivate.accesskey "D">
