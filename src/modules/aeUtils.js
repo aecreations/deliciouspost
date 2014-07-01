@@ -1,7 +1,7 @@
 
 const EXPORTED_SYMBOLS = ["aeUtils"];
 
-const DEBUG = false;
+const DEBUG = true;
 const EXTENSION_ID = "{d93e6838-8272-4382-a0fb-36a56db176c5}";
 
 const Cc = Components.classes;
