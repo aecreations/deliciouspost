@@ -283,7 +283,9 @@ window.aecreations.deliciousPost = {
 
   setSaveProgressIndicatorStatus: function (aStatus)
   {
-    if (! this._saveProgressIndicatorEnabled) {
+    let showProgressIndicatorIcon = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
+
+    if (!this._saveProgressIndicatorEnabled || !showProgressIndicatorIcon) {
       return;
     }
 
@@ -315,7 +317,8 @@ window.aecreations.deliciousPost = {
 
   showSaveProgressIndicator: function ()
   {
-    if (this._saveProgressIndicatorEnabled) {
+    let showProgressIndicatorIcon = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
+    if (this._saveProgressIndicatorEnabled && showProgressIndicatorIcon) {
       // ...
     }
   },
@@ -323,7 +326,8 @@ window.aecreations.deliciousPost = {
 
   hideSaveProgressIndicator: function ()
   {
-    if (this._saveProgressIndicatorEnabled) {
+    let showProgressIndicatorIcon = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
+    if (this._saveProgressIndicatorEnabled && showProgressIndicatorIcon) {
       CustomizableUI.destroyWidget("ae-deliciouspost-save-progress");
     }
   },
