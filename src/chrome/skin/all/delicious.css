@@ -3,22 +3,14 @@
 /* Integration with Firefox 28 and older. */
 #ae-deliciouspost-toolbarbutton {
 	list-style-image: url(chrome://aedeliciouspost/skin/images/hostappIcon.png);
-	-moz-image-region: rect(0, 33px, 24px, 0);
-}
-
-#ae-deliciouspost-toolbarbutton:hover {
-	-moz-image-region: rect(0, 66px, 24px, 33px);
-}
-
-toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton {
 	-moz-image-region: rect(0, 88px, 16px, 66px);
 }
 
-toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton:hover {
+#ae-deliciouspost-toolbarbutton:hover {
 	-moz-image-region: rect(0, 110px, 16px, 88px);
 }
 
-/* Firefox Australis integration. */
+/* Integration with Firefox Australis. */
 #ae-deliciouspost-toolbarbutton[cui-areatype="toolbar"] {
   -moz-image-region: rect(0px, 110px, 16px, 88px);
 }
