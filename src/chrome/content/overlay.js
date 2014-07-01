@@ -159,8 +159,6 @@ window.aecreations.deliciousPost = {
       that.aeUtils.log("AE Delicious Post: req.readyState = " + req.readyState);
 
       var progressIndDelay = that.aeConstants.PROGRESS_INDICATOR_DELAY;
-      var alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
-                                .getService(Components.interfaces.nsIAlertsService);
       var showNotification = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
 
       if (req.readyState == 1       // send() has not been called yet
@@ -191,11 +189,9 @@ window.aecreations.deliciousPost = {
 	      that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_FAILURE);
 
 	      if (resultCode == that.aeConstants.RESULTCODE_ITEM_ALREADY_EXISTS) {
+
 		if (showNotification) {
-                  try {
-                    alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("itemAlreadyExists"));
-	          }
-                  catch (e) {}
+		  that.showNotificationMsg(that._strBundle.getString("itemAlreadyExists"));
 		  window.setTimeout(function (aEvent) { window.aecreations.deliciousPost.hideSaveProgressIndicator() }, progressIndDelay);
 		  return;
                 }
@@ -218,13 +214,9 @@ window.aecreations.deliciousPost = {
 	    return;
 	  }
 	  that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_SUCCESS);
-
 	  if (showNotification) {
-            try {
-              alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", that._strBundle.getString("appName"), that._strBundle.getString("statussuccess"));
-	    }
-	    catch (e) {}
-          }
+	    that.showNotificationMsg(that._strBundle.getString("statussuccess"));
+	  }
 	}
 	// HTTP error (response code other than 200)
 	else {
@@ -336,6 +328,18 @@ window.aecreations.deliciousPost = {
   //
   // Utility methods
   //
+
+  showNotificationMsg: function (aMessage)
+  {
+    let alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
+                              .getService(Components.interfaces
+                                                    .nsIAlertsService);
+    try {
+      alertsSvc.showAlertNotification("chrome://aedeliciouspost/skin/images/icon.png", this._strBundle.getString("appName"), aMessage);
+    }
+    catch (e) {}
+  },
+
 
   alert: function (aMessage)
   {
