@@ -191,7 +191,7 @@ window.aecreations.deliciousPost = {
 	      if (resultCode == that.aeConstants.RESULTCODE_ITEM_ALREADY_EXISTS) {
 
 		if (showNotification) {
-		  that.showNotificationMsg(that._strBundle.getString("itemAlreadyExists"));
+		  that.notify(that._strBundle.getString("itemAlreadyExists"));
 		  window.setTimeout(function (aEvent) { window.aecreations.deliciousPost.hideSaveProgressIndicator() }, progressIndDelay);
 		  return;
                 }
@@ -215,7 +215,7 @@ window.aecreations.deliciousPost = {
 	  }
 	  that.setSaveProgressIndicatorStatus(that.aeConstants.SAVESTATUS_SUCCESS);
 	  if (showNotification) {
-	    that.showNotificationMsg(that._strBundle.getString("statussuccess"));
+	    that.notify(that._strBundle.getString("statussuccess"));
 	  }
 	}
 	// HTTP error (response code other than 200)
@@ -329,7 +329,7 @@ window.aecreations.deliciousPost = {
   // Utility methods
   //
 
-  showNotificationMsg: function (aMessage)
+  notify: function (aMessage)
   {
     let alertsSvc = Components.classes["@mozilla.org/alerts-service;1"]
                               .getService(Components.interfaces
