@@ -92,6 +92,10 @@ function delicious_post_dialog_accept() {
 	  // Handling of some commonly-used special chars that aren't decoded
 	  // properly by Delicious after posting.
 	  switch (aString.charCodeAt(i)) {
+	  case 0x2018: // Left single quotation mark
+	  case 0x2019: // Right single quotation mark
+	    chr = "'";
+	    break;
 	  case 0x2014: // Em dash
 	    chr = "--";
 	    break;
@@ -112,9 +116,7 @@ function delicious_post_dialog_accept() {
 	    chr = strArray[i];
 	    break;
 	  }
-
-	  rv += encodeURIComponent(chr).replace(/\'/g,"%27")
-	                               .replace(/\"/g,"%22");
+	  rv += encodeURIComponent(chr);
 	}
 	else {
 	  rv += strArray[i];
@@ -123,6 +125,7 @@ function delicious_post_dialog_accept() {
     }
     return rv;
   }
+
 
   delicious_postDialog();
 	
@@ -195,6 +198,10 @@ function delicious_post_dialog_accept() {
   // HTTP request
   username = encodeURIComponent(username);
   password = encodeURIComponent(password);
+
+  // Fix those pesky single and double quotes.
+  querystring = querystring.replace(/\'/g, "%27");
+  querystring = querystring.replace(/\"/g, "%22");
   
   var debugMsg = "URL:\t\t" + url + "\nDescription:\t" + description + "\nNotes:\t" + extended + "\nPrivate:\t" + privateBkmk + "\n\nQuery string: \"" + querystring + "\"";
 
