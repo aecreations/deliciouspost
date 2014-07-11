@@ -12,6 +12,8 @@
   <script type="application/javascript">
   <![CDATA[
 
+    Components.utils.import("resource://aedeliciouspost/modules/aeUtils.js");
+
     var gStrBundle;
 
 
@@ -22,6 +24,12 @@
 
     function initDlg() {
       gStrBundle = $("ae-deliciouspost-strings");
+
+      if (aeUtils.getOS() == "Darwin") {
+        // Prevent unwanted wrapping of checkbox label for the progress icon
+        // option, on Mac OS X.
+        $("ae-deliciouspost-preferences").style.minWidth = "35em";
+      }
 
       var isPrivateBkmksEnabled = Application.prefs.getValue("extensions.aecreations.deliciouspost.allow_private_bookmarks", true);
 
@@ -95,5 +103,5 @@
    accesskey="&showNotification.accesskey;"/>
   <checkbox id="enable-shortcut-key" label="&enableShortcutKey.label;" accesskey="&enableShortcutKey.accesskey;"  oncommand="showChangedPrefMsg()"/>
 
-  <separator class="thin" style="min-width:25em"/>
+  <separator class="thin" />
 </dialog>
