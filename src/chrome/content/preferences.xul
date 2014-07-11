@@ -7,7 +7,7 @@
  id="ae-deliciouspost-preferences" 
  title="&prefDlg.title;" orient="vertical" buttons="accept,cancel"
  onload="initDlg()" ondialogaccept="return doOK()"
- ondialogcancel="return doCancel()">
+ ondialogcancel="return doCancel()" style="min-width:28em">
 
   <script type="application/javascript">
   <![CDATA[
@@ -25,12 +25,6 @@
     function initDlg() {
       gStrBundle = $("ae-deliciouspost-strings");
 
-      if (aeUtils.getOS() == "Darwin") {
-        // Prevent unwanted wrapping of checkbox label for the progress icon
-        // option, on Mac OS X.
-        $("ae-deliciouspost-preferences").style.minWidth = "35em";
-      }
-
       var isPrivateBkmksEnabled = Application.prefs.getValue("extensions.aecreations.deliciouspost.allow_private_bookmarks", true);
 
       $("background-save").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.background_save", true);
@@ -41,11 +35,15 @@
       $("always-private").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.always_private", false);
       $("show-notification").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_notification", true);
 
-      // Available on Firefox 29 and newer.
+      // Option to show progress icon is available on Firefox 29 and newer.
       if (parseInt(Application.version) < 29) {
         $("show-progress-icon").hidden = true;
       }
       else {
+        if (aeUtils.getOS() == "Darwin") {
+          // Prevent unwanted wrapping of checkbox label text on Mac OS X.
+          $("ae-deliciouspost-preferences").style.minWidth = "35em";
+        }
         $("show-progress-icon").checked = Application.prefs.getValue("extensions.aecreations.deliciouspost.show_progress_icon", true);
       }
 
