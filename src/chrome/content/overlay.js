@@ -31,10 +31,6 @@ window.aecreations.deliciousPost = {
       document.getElementById("contentAreaContextMenu")
               .removeEventListener("popupshowing", 
 				   that.initContentAreaContextMenu, false);
-
-      if (that._saveProgressIndicatorEnabled) {
-	that.destroySaveProgressIndicator();
-      }
     }
   },
 
