@@ -5,10 +5,12 @@
 
 <dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
  id="ae-deliciouspost-preferences" 
- title="&prefDlg.title;" orient="vertical" buttons="accept,cancel"
+ title="&prefDlg.title;" orient="vertical" buttons="accept,cancel,extra2"
+ buttonlabelextra2="OAuth Setup"
  onload="initDlg()" ondialogaccept="return doOK()"
  ondialogcancel="return doCancel()" style="min-width:28em">
 
+  <script type="application/javascript" src="chrome://aedeliciouspost/content/authorize.js"/>
   <script type="application/javascript">
   <![CDATA[
 
@@ -50,6 +52,16 @@
       if (! isPrivateBkmksEnabled) {
         $("always-private").disabled = true;
       }
+
+      $("ae-deliciouspost-preferences").getButton("extra2").addEventListener(
+        "click", doOAuthSetup, false
+      );
+    }
+
+    function doOAuthSetup(aEvent)
+    {
+      // Open a browser window that displays the Delicious authorization page.
+      deliciousOAuth();
     }
 
 
