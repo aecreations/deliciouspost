@@ -53,9 +53,12 @@
         $("always-private").disabled = true;
       }
 
-      $("ae-deliciouspost-preferences").getButton("extra2").addEventListener(
+      $("ae-deliciouspost-preferences").getButton("extra2").hidden = true;
+      /***
+      .addEventListener(
         "click", doOAuthSetup, false
       );
+      ***/
     }
 
     function doOAuthSetup(aEvent)
