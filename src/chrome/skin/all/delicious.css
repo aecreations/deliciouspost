@@ -1,5 +1,6 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* Integration with Firefox 28 and older. */
 #ae-deliciouspost-toolbarbutton {
 	list-style-image: url(chrome://aedeliciouspost/skin/all/buttons.png);
 	-moz-image-region: rect(0 33px 24px 0);
@@ -16,6 +17,17 @@ toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton {
 toolbar[iconsize="small"] #ae-deliciouspost-toolbarbutton:hover {
 	-moz-image-region: rect(0 110px 16px 88px);
 }
+
+/* Integration with Firefox Australis. */
+#ae-deliciouspost-toolbarbutton[cui-areatype="toolbar"] {
+  -moz-image-region: rect(0px, 110px, 16px, 88px);
+}
+
+#ae-deliciouspost-toolbarbutton[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"][removable="true"] > #ae-deliciouspost-toolbarbutton {
+  -moz-image-region: rect(24px, 32px, 56px, 0px);
+}
+
 
 /* Status bar icon to indicate background save progress */
 #ae-deliciouspost-save-progress {
