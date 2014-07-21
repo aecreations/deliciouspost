@@ -92,6 +92,10 @@ function delicious_post_dialog_accept() {
 	  // Handling of some commonly-used special chars that aren't decoded
 	  // properly by Delicious after posting.
 	  switch (aString.charCodeAt(i)) {
+	  case 0x2018: // Left single quotation mark
+	  case 0x2019: // Right single quotation mark
+	    chr = "'";
+	    break;
 	  case 0x2014: // Em dash
 	    chr = "--";
 	    break;
@@ -116,8 +120,7 @@ function delicious_post_dialog_accept() {
 	    break;
 	  }
 
-	  rv += encodeURIComponent(chr).replace(/\'/g,"%27")
-	                               .replace(/\"/g,"%22");
+	  rv += encodeURIComponent(chr);
 	}
 	else {
 	  rv += strArray[i];
