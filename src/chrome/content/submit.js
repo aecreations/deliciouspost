@@ -96,10 +96,10 @@ function delicious_post_dialog_accept() {
 	    chr = "--";
 	    break;
 	  case 0x00AB:  // Left-pointing double angle quotation mark
-	    chr = "--"; // Sadly, "<<" doesn't work
+	    chr = "-"; // Sadly, "<<" doesn't work
 	    break;
 	  case 0x00BB:  // Right-pointing double angle quotation mark
-	    chr = "--"; // Neither does ">>"
+	    chr = "-"; // Neither does ">>"
 	    break;
 	  case 0x25B6:  // Black right-pointing triangle
 	    chr = "";   // (used in YouTube page titles for playing videos)
