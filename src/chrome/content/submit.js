@@ -96,10 +96,10 @@ function delicious_post_dialog_accept() {
 	    chr = "--";
 	    break;
 	  case 0x00AB:  // Left-pointing double angle quotation mark
-	    chr = "<<";
+	    chr = "--"; // Sadly, "<<" doesn't work
 	    break;
 	  case 0x00BB:  // Right-pointing double angle quotation mark
-	    chr = ">>";
+	    chr = "--"; // Neither does ">>"
 	    break;
 	  case 0x25B6:  // Black right-pointing triangle
 	    chr = "";   // (used in YouTube page titles for playing videos)
@@ -107,6 +107,9 @@ function delicious_post_dialog_accept() {
 	  case 0x2022:  // Bullet
 	  case 0x00B7:  // Middle dot
 	    chr = "-";
+	    break;
+	  case 0x2026:  // Horizontal elipses
+	    chr = "...";
 	    break;
 	  default:
 	    chr = strArray[i];
@@ -196,6 +199,10 @@ function delicious_post_dialog_accept() {
   username = encodeURIComponent(username);
   password = encodeURIComponent(password);
   
+  // Fix those pesky single and double quotes.
+  querystring = querystring.replace(/\'/g, "%27");
+  querystring = querystring.replace(/\"/g, "%22");
+
   var debugMsg = "URL:\t\t" + url + "\nDescription:\t" + description + "\nNotes:\t" + extended + "\nPrivate:\t" + privateBkmk + "\n\nQuery string: \"" + querystring + "\"";
 
   if (dlgArgs.bkgrdSave) {
