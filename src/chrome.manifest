@@ -12,14 +12,13 @@ style	chrome://global/content/customizeToolbar.xul	chrome://aedeliciouspost-laf/
 
 locale	aedeliciouspost	en-US	chrome/locale/en-US/
 locale	aedeliciouspost	fr	chrome/locale/fr/
-locale	aedeliciouspost	de	chrome/locale/de/
-locale	aedeliciouspost	el	chrome/locale/el/
+#locale	aedeliciouspost	de	chrome/locale/de/
+#locale	aedeliciouspost	el	chrome/locale/el/
 locale	aedeliciouspost	it	chrome/locale/it/
-locale	aedeliciouspost	pl	chrome/locale/pl/
-locale	aedeliciouspost	pt-BR	chrome/locale/pt-BR/
-locale	aedeliciouspost	ru-RU	chrome/locale/ru-RU/
+#locale	aedeliciouspost	pt-BR	chrome/locale/pt-BR/
+#locale	aedeliciouspost	ru-RU	chrome/locale/ru-RU/
 locale	aedeliciouspost	es-ES	chrome/locale/es-ES/
 locale	aedeliciouspost	sv-SE	chrome/locale/sv-SE/
 locale	aedeliciouspost	tr	chrome/locale/tr/
-locale	aedeliciouspost	zh-CN	chrome/locale/zh-CN/
+#locale	aedeliciouspost	zh-CN	chrome/locale/zh-CN/
 
