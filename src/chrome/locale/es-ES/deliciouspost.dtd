@@ -6,9 +6,19 @@
 <!ENTITY notesFromSel.accesskey "A">
 <!ENTITY privateBkmks.label "Permitir marcadores privados">
 <!ENTITY privateBkmks.accesskey "v">
-<!ENTITY replaceBkmk.label "Mantener el marcador existente si la URL ya fue enviada.">
-<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY keepBkmk.label "Si ya existe el marcador, no reemplazarlo">
+<!ENTITY keepBkmk.accesskey "K">
 <!ENTITY enableShortcutKey.label "Usar Alt+Shift+D para mostrar el cuadro de diálogo">
 <!ENTITY enableShortcutKey.accesskey "U">
 <!ENTITY alwaysPrivate.label "Seleccionar siempre la opción No Compartir">
 <!ENTITY alwaysPrivate.accesskey "D">
+<!ENTITY showNotification.label "Mostrar notificación cuando la URL ha sido enviada satisfactoriamente.">
+<!ENTITY showNotification.accesskey "n">
+<!ENTITY showProgressIcon.label "Mostrar icono de progreso en la barra de estado (requiere Status-4-Evar)">
+<!ENTITY showProgressIcon.accesskey "i">
+<!ENTITY aboutDlg.title "Acerca de Delicious Post">
+<!ENTITY closeBtn.label "Cerrar">
+<!ENTITY createdBy.label "Creado por:">
+<!ENTITY visitHomePg.label "Visitar Web">
+<!ENTITY contributors.label "Colaboradores:">
+<!ENTITY disclaimer.desc "Aviso Legal: Delicious Post usa la API de Delicious.com, cuya disponibilidad y fiabilidad puede cambiar en cualquier momento y está fuera del control de esta extensión. Delicious Post se proporciona &quot;tal y como es&quot; y sin garantía de ninguna clase, incluyendo, pero no limitándola a, las garantías implícitas de comerciabilidad y aptitud para un uso particular.">

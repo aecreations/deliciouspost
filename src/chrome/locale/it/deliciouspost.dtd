@@ -8,9 +8,20 @@
 <!ENTITY notesFromSel.accesskey "C">
 <!ENTITY privateBkmks.label "Permetti i segnalibri privati (escludendone la condivisione)">
 <!ENTITY privateBkmks.accesskey "P">
-<!ENTITY replaceBkmk.label "Conserva i segnalibri esistenti se i relativi URL sono già stati inviati">
-<!ENTITY replaceBkmk.accesskey "s">
+<!ENTITY keepBkmk.label "Conserva i segnalibri esistenti se i relativi URL sono già stati inviati">
+<!ENTITY keepBkmk.accesskey "s">
 <!ENTITY enableShortcutKey.label "Apri la finestra d'invio del link con la scorciatoia da tastiera Alt+Maiusc+D">
 <!ENTITY enableShortcutKey.accesskey "A">
 <!ENTITY alwaysPrivate.label "Seleziona automaticamente l'opzione per escludere la condivisione">
 <!ENTITY alwaysPrivate.accesskey "z">
+<!ENTITY showNotification.label "Notifica quando l'invio del link è avvenuto con successo">
+<!ENTITY showNotification.accesskey "o">
+<!ENTITY showProgressIcon.label "Mostra l'icona di avanzamento invio del link nella barra di stato dell'estensione Status-4-Evar">
+<!ENTITY showProgressIcon.accesskey "M">
+<!-- About dialog -->
+<!ENTITY aboutDlg.title "Informazioni su Delicious Post">
+<!ENTITY closeBtn.label "Chiudi">
+<!ENTITY createdBy.label "Creata da:">
+<!ENTITY visitHomePg.label "Visita il sito web">
+<!ENTITY contributors.label "Collaboratori:">
+<!ENTITY disclaimer.desc "Dichiarazione di non responsabilità: Delicious Post utilizza l'API fornita da Delicious.com, la cui disponibilità/affidabilità può variare in qualsiasi momento e su cui l'estensione non ha alcun controllo. Questa estensione viene quindi distribuita &quot;così com'è&quot; e senza garanzie di alcun tipo, includendo e non limitandosi a quelle implicite di commerciabilità e idoneità per scopi specifici">

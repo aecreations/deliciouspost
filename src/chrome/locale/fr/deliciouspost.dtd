@@ -8,9 +8,19 @@
 <!ENTITY notesFromSel.accesskey "A">
 <!ENTITY privateBkmks.label "Autoriser les marque-pages privés">
 <!ENTITY privateBkmks.accesskey "v">
-<!ENTITY replaceBkmk.label "Conserver le marque-page existant si l&apos;URL est déjà publiée">
-<!ENTITY replaceBkmk.accesskey "C">
+<!ENTITY keepBkmk.label "Si le marque-page existe déjà, ne pas le remplacer">
+<!ENTITY keepBkmk.accesskey "q">
 <!ENTITY enableShortcutKey.label "Utiliser Alt+Maj+D pour afficher la boîte de dialogue">
 <!ENTITY enableShortcutKey.accesskey "U">
 <!ENTITY alwaysPrivate.label "Toujours activer l\'option « Ne pas partager »">
 <!ENTITY alwaysPrivate.accesskey "N">
+<!ENTITY showNotification.label "Afficher la notification si l'URL est postée avec succès">
+<!ENTITY showNotification.accesskey "n">
+<!ENTITY showProgressIcon.label "Afficher l'icône de progression dans la barre d'état (nécessite Status-4-Evar)">
+<!ENTITY showProgressIcon.accesskey "i">
+<!ENTITY aboutDlg.title "À propos de Delicious Post">
+<!ENTITY closeBtn.label "Fermer">
+<!ENTITY createdBy.label "Créée par :">
+<!ENTITY visitHomePg.label "Se rendre à la page Web">
+<!ENTITY contributors.label "Contributeurs :">
+<!ENTITY disclaimer.desc "DÉCHARGE DE RESPONSABILITÉ : Delicious Post utilise l'API de Delicious.com, dont la disponibilité et la fiabilité peuvent changer à tout moment, et qui ne peut être contrôlée par cette extension. Delicious Post vous est fournie &quot;telle quelle&quot; et sans aucune espèce de garantie,en incluant, mais ne s'y limitant pas, les garanties implicites de qualité marchande et d'adéquation à un usage particulier.">

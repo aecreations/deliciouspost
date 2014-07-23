@@ -8,9 +8,19 @@
 <!ENTITY notesFromSel.accesskey "A">
 <!ENTITY privateBkmks.label "Tillåt privata bokmärken">
 <!ENTITY privateBkmks.accesskey "v">
-<!ENTITY replaceBkmk.label "Behåll existerande bokmärken om url redan är inlagd">
-<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY keepBkmk.label "Om bokmärket redan finns, ersätt det inte!">
+<!ENTITY keepBkmk.accesskey "K">
 <!ENTITY enableShortcutKey.label "Använd Alt+Shift+D för att visa dialog">
 <!ENTITY enableShortcutKey.accesskey "U">
 <!ENTITY alwaysPrivate.label "Aktivera alltid alternativet Dela inte">
 <!ENTITY alwaysPrivate.accesskey "D">
+<!ENTITY showNotification.label "Visa meddelande när url har lagts upp.">
+<!ENTITY showNotification.accesskey "n">
+<!ENTITY showProgressIcon.label "Visa förloppsindikator i statusfältet (kräver Status-4-Evar)">
+<!ENTITY showProgressIcon.accesskey "i">
+<!ENTITY aboutDlg.title "Om Delicious Post">
+<!ENTITY closeBtn.label "Stäng">
+<!ENTITY createdBy.label "Skapad av:">
+<!ENTITY visitHomePg.label "Besök webbplats">
+<!ENTITY contributors.label "Medarbetare:">
+<!ENTITY disclaimer.desc "FRISKRIVNINGSKLAUSUL: Delicious Post använder Delicious.com API, vars tillgänglighet och pålitlighet kan variera, och ligger utanför det här tilläggets kontroll. Delicious Post levereras till dig &quot;som det är” och utan garantier av något slag, inklusive, men inte begränsat till implicita garantier om säljbarhet och lämplighet för ett särskilt syfte.">

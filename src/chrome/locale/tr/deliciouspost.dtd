@@ -6,9 +6,19 @@
 <!ENTITY notesFromSel.accesskey "O">
 <!ENTITY privateBkmks.label "Özel yer imlerine izin ver">
 <!ENTITY privateBkmks.accesskey "Ö">
-<!ENTITY replaceBkmk.label "URL gönderilmişse var olan yer imini koru">
-<!ENTITY replaceBkmk.accesskey "K">
+<!ENTITY keepBkmk.label "Yer imi varsa değiştirme">
+<!ENTITY keepBkmk.accesskey "D">
 <!ENTITY enableShortcutKey.label "İletişim penceresi için Alt+Shift+D kullan">
 <!ENTITY enableShortcutKey.accesskey "İ">
 <!ENTITY alwaysPrivate.label "Her zaman seç, Paylaşma seçeneği">
 <!ENTITY alwaysPrivate.accesskey "P">
+<!ENTITY showNotification.label "URL başarıyla duyurulduğunda haber ver">
+<!ENTITY showNotification.accesskey "H">
+<!ENTITY showProgressIcon.label "Durum çubuğunda (Status-4-Evar gerekli) ilerleme simgesini göster">
+<!ENTITY showProgressIcon.accesskey "i">
+<!ENTITY aboutDlg.title "Delicious Post Hakkında">
+<!ENTITY closeBtn.label "Kapat">
+<!ENTITY createdBy.label "Üreten:">
+<!ENTITY visitHomePg.label "Ana Sayfaya Uğra">
+<!ENTITY contributors.label "Katkıda Bulunanlar:">
+<!ENTITY disclaimer.desc "YASAL UYARI: Delicious Post, kullanılabilirliği ve güvenilirliği her zaman değişebilen ve eklentinin denetiminde olmayan Delicious.com API'sini kullanır. Delicious Post size &quot;olduğu gibi&quot;, herhangi türden garantisi olmadan, belirli bir amaca uygunluk ve zımni garantileri içeren ama bunlarla sınırlı kalmadan, sağlanmaktadır.">
